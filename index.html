@@ -1,64 +1,66 @@
 <!DOCTYPE html>
-<html lang="en" class="h-100">
+<!-- mudei o idioma pra português -->
+<html lang="pt-br" class="h-100">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css_manual/css_manual.css">
-    <link rel="shotcut icon" href="./img/icone.png">
-    <title>Quiz - Responda se Souber</title>
+  <meta charset="UTF-8">
+  <!-- removi esse treco aí, meu navegador reclamou dele -->
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css_manual/css_manual.css">
+  <!-- mudei shotcut pra shortcut -->
+  <link rel="shortcut icon" href="./img/icone.png">
+  <title>Quiz - Responda se Souber</title>
 </head>
+
 <body class="h-100">
-    
-    <div class="container-fluid h-100">
-        <div class="row h-100 justify-content-center align-items-center">
-            <div class="col-sm text-center">
-                <h3>Bem vindo ao</h3>
-                <h1>Quiz Responda se Souber!</h1>
 
-                <button type="button" class="btn btn-info btn-sm botao" id="comecar">Começar</button>
-            </div>
-        </div>
-
-        <div class="d-flex justify-content-center align-items-center">
-            <div class="row d-flex justify-content-center flex-column">
-
-                <div class="shadow pergunta text-center">
-                    <h2>Atualmente, quantos elementos químicos a tabela periódica possui?</h2>
-                </div>
-
-                <div class="shadow">
-                    <div class="row mt-2">
-                        <div class="col-auto" style="background-color: brown;">A</div>
-                        <div class="col" style="background-color: chartreuse;">Pedro</div>
-                    </div>
-                    <div class="row mt-2">
-                        <div class="col-auto" style="background-color: brown;">A</div>
-                        <div class="col" style="background-color: chartreuse;">Pedro</div>
-                    </div>
-                    <div class="row mt-2">
-                        <div class="col-auto" style="background-color: brown;">A</div>
-                        <div class="col" style="background-color: chartreuse;">Pedro</div>
-                    </div>
-                    <div class="row mt-2">
-                        <div class="col-auto" style="background-color: brown;">A</div>
-                        <div class="col" style="background-color: chartreuse;">Pedro</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="container-fluid h-100">
+    <!-- removi row e adicionei d-flex -->
+    <!-- removi a div filha que tinha text-center pq o justify-content-center já centraliza tudo -->
+    <div class="h-100 d-flex flex-column justify-content-center align-items-center">
+      <h3>Bem vindo ao</h3>
+      <h1>Quiz Responda se Souber!</h1>
+      <button type="button" class="btn btn-info btn-sm botao" id="comecar">Começar</button>
     </div>
-    <!--Biblioteca anime_master-->
-    <script src="./anime_master/anime.min.js"></script>
+    <!-- removi: class="d-flex justify-content-center align-items-center"-->
+    <div>
+      <div class="shadow text-center p-4 pergunta">
+        <h2>Atualmente, quantos elementos químicos a tabela periódica possui?</h2>
+      </div>
+      <!-- adicionei um container-fluid -->
+      <div class="container-fluid shadow">
+        <div class="row mt-2">
+          <div class="col-auto py-3 px-4" style="background-color: brown;">A</div>
+          <div class="col py-3" style="background-color: chartreuse;">Pedro</div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-auto py-3 px-4" style="background-color: brown;">B</div>
+          <div class="col py-3" style="background-color: chartreuse;">Pedro</div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-auto py-3 px-4" style="background-color: brown;">C</div>
+          <div class="col py-3" style="background-color: chartreuse;">Pedro</div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-auto py-3 px-4" style="background-color: brown;">D</div>
+          <div class="col py-3" style="background-color: chartreuse;">Pedro</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Biblioteca anime_master-->
+  <script src="./anime_master/anime.min.js"></script>
 
-    <!--Jquery_V_3.6.0-->
-    <script src="./jquery_3.6.0/jquery-3.6.0.min.js"></script>
+  <!--Jquery_V_3.6.0-->
+  <script src="./jquery_3.6.0/jquery-3.6.0.min.js"></script>
 
-    <!--Bootstrap_4_JS-->
-    <script src="./bootstrap/js/bootstrap.min.js"></script>
+  <!--Bootstrap_4_JS-->
+  <script src="./bootstrap/js/bootstrap.min.js"></script>
 
-    <!--JavaScript_Manual-->
-    <script src="./index.js"></script>
+  <!--JavaScript_Manual-->
+  <script src="./index.js"></script>
 </body>
+
 </html>
