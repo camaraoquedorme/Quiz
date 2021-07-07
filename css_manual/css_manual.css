@@ -20,3 +20,12 @@ h3, h1{
 .pergunta{
     background-color: rgb(30, 199, 255);
 }
+.tela_quiz{
+    display: none;
+}
+.alternativas{
+    cursor: pointer;
+}
+.alternativas:hover{
+    transform: scale(1.05);
+}
