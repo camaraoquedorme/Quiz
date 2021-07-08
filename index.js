@@ -67,30 +67,30 @@ const audioTempoAcabando = new Audio("./efeitos_sonoros/tempoAcabando.mp3");
 
 setTimeout(function () {
 
-   timer(0, 15, function(time){
+    timer(0, 15, function (time) {
 
-       if(time.toSeconds() <= 10){
+        if (time.toSeconds() <= 10) {
 
-        audioTempoAcabando.play();
-        
-           temp.style.transform = 'scale(1.2)';
+            audioTempoAcabando.play();
 
-           setTimeout(function(){
+            temp.style.transform = 'scale(1.2)';
 
-               temp.style.transform = 'scale(1.0)';
+            setTimeout(function () {
 
-           }, 200);
+                temp.style.transform = 'scale(1.0)';
 
-           temp.style.color = 'red';
-       }
+            }, 200);
 
-       temp.textContent = time.toString();
+            temp.style.color = 'red';
+        }
 
-   }, function(){
+        temp.textContent = time.toString();
 
-       console.log('acabou');
+    }, function () {
 
-       audio.play();
-   })
+        console.log('acabou');
+
+        audio.play();
+    })
 
 }, 1000)
