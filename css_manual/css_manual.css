@@ -29,6 +29,16 @@ h3, h1{
 .alternativas:hover{
     transform: scale(1.05);
 }
+.pontos h5{
+    color: white;
+}
+.tempo h5{
+    color: white;
+}
+span{
+    color: red;
+    padding-left: 8px;
+}
 
 .footer{
     position: absolute;
