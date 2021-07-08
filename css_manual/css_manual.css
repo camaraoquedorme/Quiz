@@ -29,3 +29,20 @@ h3, h1{
 .alternativas:hover{
     transform: scale(1.05);
 }
+
+.footer{
+    position: absolute;
+    bottom: 0px;
+    background-color: rgb(21, 102, 252);
+    width: 100%;
+    text-align: center;
+}
+.footer p{
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+.footer p a{
+    color:white;
+
+}
