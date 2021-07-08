@@ -67,7 +67,7 @@ const audioTempoAcabando = new Audio("./efeitos_sonoros/tempoAcabando.mp3");
 
 setTimeout(function () {
 
-    timer(0, 15, function (time) {
+    timer(1, 0, function (time) {
 
         if (time.toSeconds() <= 10) {
 
