@@ -1,9 +1,16 @@
+//Audio de Fundo
+
+const audioFundo = new Audio('./efeitos_sonoros/FundoMusical_quiz.mp3')
+
 //jQuery
 
 $(document).ready(function () {
     $('#comecar').click(function () {
         $('#titulo').hide();
-        $('.tela_quiz').show(600);
+        $('.tela_quiz').show(600, function(){
+            audioFundo.play();
+        });
+
     })
 })
 
