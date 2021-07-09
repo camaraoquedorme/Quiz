@@ -109,3 +109,39 @@ function timer(minutes, seconds, callback, onfinish) {
     loop();
 }
 
+const quiz = [
+
+    {
+        pergunta: 'De quem é a famosa frase “Penso, logo existo”?',
+
+        alternativas: [
+            'Platão',
+            'Galileu Galilei',
+            'Descartes',
+            'Sócrates',
+        ],
+        resposta: 'Descartes'
+    },
+
+    {
+        pergunta: 'De onde é a invenção do chuveiro elétrico?',
+
+        alternativas: [
+            'França',
+            'Inglaterra',
+            'Brasil',
+            'Autrália'
+        ],
+        resposta: 'Brasil'
+    }
+]
+
+const perguntas = document.getElementById('perguntas');
+
+    for (const objetos of quiz) {
+
+        console.log(objetos.pergunta)
+
+        perguntas.textContent = objetos.pergunta;
+
+    }
