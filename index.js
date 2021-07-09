@@ -2,13 +2,54 @@
 
 const audioFundo = new Audio('./efeitos_sonoros/FundoMusical_quiz.mp3')
 
+//efeitos sonoros
+const temp = document.getElementById('tempo');
+
+const audio = new Audio("./efeitos_sonoros/tempo-esgotado.mp3");
+const audioTempoAcabando = new Audio("./efeitos_sonoros/tempoAcabando.mp3");
+
 //jQuery
 
 $(document).ready(function () {
     $('#comecar').click(function () {
         $('#titulo').hide();
-        $('.tela_quiz').show(600, function(){
+        $('.tela_quiz').show(600, function () {
             audioFundo.play();
+
+            setTimeout(function () {
+
+                timer(1, 0, function (time) {
+
+                    if (time.toSeconds() <= 10) {
+
+                        audioTempoAcabando.play();
+
+                        temp.style.transform = 'scale(1.2)';
+
+                        setTimeout(function () {
+
+                            temp.style.transform = 'scale(1.0)';
+
+                        }, 200);
+
+                        temp.style.color = 'red';
+                    }
+
+                    temp.textContent = time.toString();
+
+                }, function () {
+
+                    console.log('acabou');
+
+                    audio.play();
+
+                    audioFundo.pause();
+
+                    audioFundo.currentTime = 0;
+                })
+
+            }, 1000)
+
         });
 
     })
@@ -67,37 +108,4 @@ function timer(minutes, seconds, callback, onfinish) {
     }
     loop();
 }
-const temp = document.getElementById('tempo');
 
-const audio = new Audio("./efeitos_sonoros/tempo-esgotado.mp3");
-const audioTempoAcabando = new Audio("./efeitos_sonoros/tempoAcabando.mp3");
-
-setTimeout(function () {
-
-    timer(1, 0, function (time) {
-
-        if (time.toSeconds() <= 10) {
-
-            audioTempoAcabando.play();
-
-            temp.style.transform = 'scale(1.2)';
-
-            setTimeout(function () {
-
-                temp.style.transform = 'scale(1.0)';
-
-            }, 200);
-
-            temp.style.color = 'red';
-        }
-
-        temp.textContent = time.toString();
-
-    }, function () {
-
-        console.log('acabou');
-
-        audio.play();
-    })
-
-}, 1000)
