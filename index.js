@@ -1,6 +1,9 @@
+
 //Audio de Fundo
 
-const audioFundo = new Audio('./efeitos_sonoros/FundoMusical_quiz.mp3')
+const audioFundo = new Audio('./efeitos_sonoros/FundoMusical_quiz.mp3');
+const audioErrou = new Audio('./efeitos_sonoros/errou_pergunta3.mp3');
+const audioAcertou = new Audio('./efeitos_sonoros/acertou_pergunta.mp3')
 
 //efeitos sonoros
 const temp = document.getElementById('tempo');
@@ -13,45 +16,9 @@ const audioTempoAcabando = new Audio("./efeitos_sonoros/tempoAcabando.mp3");
 $(document).ready(function () {
     $('#comecar').click(function () {
         $('#titulo').hide();
-        $('.tela_quiz').show(600, function () {
+        $('.tela_quiz').show(600, carregaPerguntas() ,function () {
             audioFundo.play();
-
-            setTimeout(function () {
-
-                timer(1, 0, function (time) {
-
-                    if (time.toSeconds() <= 10) {
-
-                        audioTempoAcabando.play();
-
-                        temp.style.transform = 'scale(1.2)';
-
-                        setTimeout(function () {
-
-                            temp.style.transform = 'scale(1.0)';
-
-                        }, 200);
-
-                        temp.style.color = 'red';
-                    }
-
-                    temp.textContent = time.toString();
-
-                }, function () {
-
-                    console.log('acabou');
-
-                    audio.play();
-
-                    audioFundo.pause();
-
-                    audioFundo.currentTime = 0;
-                })
-
-            }, 1000)
-
         });
-
     })
 })
 
@@ -116,7 +83,7 @@ const quiz = [
 
         alternativas: [
             'Platão',
-            'Galileu Galilei',
+            'Galileu',
             'Descartes',
             'Sócrates',
         ],
@@ -138,10 +105,87 @@ const quiz = [
 
 const perguntas = document.getElementById('perguntas');
 
-    for (const objetos of quiz) {
+let index = 0;
 
-        console.log(objetos.pergunta)
+function carregaPerguntas(){
 
-        perguntas.textContent = objetos.pergunta;
+    if(index < quiz.length){
+        console.log(quiz[index].pergunta);
 
+        perguntas.textContent = quiz[index].pergunta;
+
+        let opcoes = document.querySelectorAll('.opcoes');
+
+        for(let key in quiz[index].alternativas){
+
+            opcoes[key].textContent = quiz[index].alternativas[key];
+
+            opcoes[key].parentNode.onclick = function(){
+
+                if(quiz[index].alternativas[key] === quiz[index].resposta){
+                    console.log('certo');
+                    opcoes[key].style.background = '#00ff00'
+                    $(opcoes[key]).prev().css("background", "#00ff00");
+
+                    audioAcertou.play();
+
+                    audioFundo.pause();
+
+                    audioFundo.currentTime = 0;
+                }else{
+                    console.log('errado')
+                    opcoes[key].style.background = '#ff0000';
+                    $(opcoes[key]).prev().css("background", "#ff0000");
+
+                    audioErrou.play();
+
+                    audioFundo.pause();
+
+                    audioFundo.currentTime = 0;
+                }
+            }
+        }
+
+        temp.textContent = "01:00";
+
+        temp.style.color = 'unset'
+
+        setTimeout(function () {
+
+            timer(1, 0, function (time) {
+
+                if (time.toSeconds() <= 10) {
+
+                    audioTempoAcabando.play();
+
+                    temp.style.transform = 'scale(1.2)';
+
+                    setTimeout(function () {
+
+                        temp.style.transform = 'scale(1.0)';
+
+                    }, 200);
+
+                    temp.style.color = 'red';
+                }
+
+                temp.textContent = time.toString();
+
+            }, function () {
+
+                console.log('acabou');
+
+                audio.play();
+
+                audioFundo.pause();
+
+                audioFundo.currentTime = 0;
+            })
+
+        }, 1000)
+
+
+        index++;
     }
+}
+
