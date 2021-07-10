@@ -123,9 +123,11 @@ function carregaPerguntas() {
             opcoes[key].parentNode.onclick = function () {
 
                 if (quiz[index].alternativas[key] === quiz[index].resposta) {
+
                     console.log('certo');
 
                     opcoes[key].style.background = '#00ff00'
+
                     $(opcoes[key]).prev().css("background", "#00ff00");
 
                     audioAcertou.play();
@@ -136,9 +138,17 @@ function carregaPerguntas() {
                     
                     somaPontos();
 
+                    for(let opcao of opcoes){
+
+                        opcao.parentNode.onclick = null;
+                    }
+
                 } else {
+
                     console.log('errado')
+
                     opcoes[key].style.background = '#ff0000';
+
                     $(opcoes[key]).prev().css("background", "#ff0000");
 
                     audioErrou.play();
@@ -146,6 +156,11 @@ function carregaPerguntas() {
                     audioFundo.pause();
 
                     audioFundo.currentTime = 0;
+
+                    for(let opcao of opcoes){
+                        
+                        opcao.parentNode.onclick = null;
+                    }
                 }
             }
         }
@@ -196,10 +211,9 @@ function carregaPerguntas() {
 let pontos = document.getElementById('pontos');
 
 let point = 0;
-let point_2 = 1;
 
 function somaPontos() {
-     point = point + point_2 ;
+     point = point + 1 ;
     
     pontos.textContent = point;
 }
