@@ -16,7 +16,7 @@ const audioTempoAcabando = new Audio("./efeitos_sonoros/tempoAcabando.mp3");
 $(document).ready(function () {
     $('#comecar').click(function () {
         $('#titulo').hide();
-        $('.tela_quiz').show(600, carregaPerguntas() ,function () {
+        $('.tela_quiz').show(600, carregaPerguntas(), function () {
             audioFundo.play();
         });
     })
@@ -107,23 +107,24 @@ const perguntas = document.getElementById('perguntas');
 
 let index = 0;
 
-function carregaPerguntas(){
+function carregaPerguntas() {
 
-    if(index < quiz.length){
+    if (index < quiz.length) {
         console.log(quiz[index].pergunta);
 
         perguntas.textContent = quiz[index].pergunta;
 
         let opcoes = document.querySelectorAll('.opcoes');
 
-        for(let key in quiz[index].alternativas){
+        for (let key in quiz[index].alternativas) {
 
             opcoes[key].textContent = quiz[index].alternativas[key];
 
-            opcoes[key].parentNode.onclick = function(){
+            opcoes[key].parentNode.onclick = function () {
 
-                if(quiz[index].alternativas[key] === quiz[index].resposta){
+                if (quiz[index].alternativas[key] === quiz[index].resposta) {
                     console.log('certo');
+
                     opcoes[key].style.background = '#00ff00'
                     $(opcoes[key]).prev().css("background", "#00ff00");
 
@@ -132,7 +133,10 @@ function carregaPerguntas(){
                     audioFundo.pause();
 
                     audioFundo.currentTime = 0;
-                }else{
+                    
+                    somaPontos();
+
+                } else {
                     console.log('errado')
                     opcoes[key].style.background = '#ff0000';
                     $(opcoes[key]).prev().css("background", "#ff0000");
@@ -187,5 +191,16 @@ function carregaPerguntas(){
 
         index++;
     }
+}
+
+let pontos = document.getElementById('pontos');
+
+let point = 0;
+let point_2 = 1;
+
+function somaPontos() {
+     point = point + point_2 ;
+    
+    pontos.textContent = point;
 }
 
