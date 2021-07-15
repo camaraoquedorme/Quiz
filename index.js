@@ -1,24 +1,28 @@
+import { listaPerguntas } from "./lista-perguntas.js";
 
-//Audio de Fundo
+//efeitos sonoros
 
 const audioFundo = new Audio('./efeitos_sonoros/FundoMusical_quiz.mp3');
 const audioErrou = new Audio('./efeitos_sonoros/errou_pergunta3.mp3');
-const audioAcertou = new Audio('./efeitos_sonoros/acertou_pergunta.mp3')
-
-//efeitos sonoros
-const temp = document.getElementById('tempo');
-
+const audioAcertou = new Audio('./efeitos_sonoros/acertou_pergunta.mp3');
 const audio = new Audio("./efeitos_sonoros/tempo-esgotado.mp3");
 const audioTempoAcabando = new Audio("./efeitos_sonoros/tempoAcabando.mp3");
+
+
+const temp = document.getElementById('tempo');
+
+function play(){
+    carregaPerguntas();
+
+    audioFundo.play();
+}
 
 //jQuery
 
 $(document).ready(function () {
     $('#comecar').click(function () {
         $('#titulo').hide();
-        $('.tela_quiz').show(600, carregaPerguntas(), function () {
-            audioFundo.play();
-        });
+        $('.tela_quiz').show(600, play);
     })
 })
 
@@ -76,53 +80,26 @@ function timer(minutes, seconds, callback, onfinish) {
     loop();
 }
 
-const quiz = [
-
-    {
-        pergunta: 'De quem é a famosa frase “Penso, logo existo”?',
-
-        alternativas: [
-            'Platão',
-            'Galileu',
-            'Descartes',
-            'Sócrates',
-        ],
-        resposta: 'Descartes'
-    },
-
-    {
-        pergunta: 'De onde é a invenção do chuveiro elétrico?',
-
-        alternativas: [
-            'França',
-            'Inglaterra',
-            'Brasil',
-            'Autrália'
-        ],
-        resposta: 'Brasil'
-    }
-]
-
 const perguntas = document.getElementById('perguntas');
 
 let index = 0;
 
 function carregaPerguntas() {
 
-    if (index < quiz.length) {
-        console.log(quiz[index].pergunta);
+    if (index < listaPerguntas.length) {
+        console.log(listaPerguntas[index].pergunta);
 
-        perguntas.textContent = quiz[index].pergunta;
+        perguntas.textContent = listaPerguntas[index].pergunta;
 
         let opcoes = document.querySelectorAll('.opcoes');
 
-        for (let key in quiz[index].alternativas) {
+        for (let key in listaPerguntas[index].alternativas) {
 
-            opcoes[key].textContent = quiz[index].alternativas[key];
+            opcoes[key].textContent = listaPerguntas[index].alternativas[key];
 
             opcoes[key].parentNode.onclick = function () {
 
-                if (quiz[index].alternativas[key] === quiz[index].resposta) {
+                if (listaPerguntas[index].alternativas[key] === listaPerguntas[index].resposta) {
 
                     console.log('certo');
 
@@ -163,9 +140,9 @@ function carregaPerguntas() {
 
                     }
 
-                    for (let key in quiz[index].alternativas){
+                    for (let key in listaPerguntas[index].alternativas){
 
-                        if(quiz[index].alternativas[key] === quiz[index].resposta){
+                        if(listaPerguntas[index].alternativas[key] === listaPerguntas[index].resposta){
                             
                             opcoes[key].style.background = '#00ff00';
                             $(opcoes[key]).prev().css("background", "#00ff00");
