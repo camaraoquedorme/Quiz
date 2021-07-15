@@ -1,15 +1,14 @@
-import { listaPerguntas } from "./lista-perguntas.js";
+import { listaPerguntas } from './lista-perguntas.js';
 
 //efeitos sonoros
 
 const audioFundo = new Audio('./efeitos_sonoros/FundoMusical_quiz.mp3');
 const audioErrou = new Audio('./efeitos_sonoros/errou_pergunta3.mp3');
 const audioAcertou = new Audio('./efeitos_sonoros/acertou_pergunta.mp3')
-const audio = new Audio("./efeitos_sonoros/tempo-esgotado.mp3");
-const audioTempoAcabando = new Audio("./efeitos_sonoros/tempoAcabando.mp3");
+const audio = new Audio('./efeitos_sonoros/tempo-esgotado.mp3');
+const audioTempoAcabando = new Audio('./efeitos_sonoros/tempoAcabando.mp3');
 
 const temp = document.getElementById('tempo');
-
 
 function play() {
 
@@ -19,11 +18,25 @@ function play() {
 
 }
 
+function next() {
+
+  setTimeout(play, 3000);
+
+}
+
+function stop() {
+
+  audioFundo.pause();
+
+  audioFundo.currentTime = 0;
+
+}
+
 //jQuery
 
 $(function () {
 
-  $('#comecar').on("click", function () {
+  $('#comecar').on('click', function () {
 
     $('#titulo').hide();
 
@@ -110,13 +123,13 @@ function carregaPerguntas() {
 
       // removendo estilos
 
-      opcoes[_index].style.background = "";
+      opcoes[_index].style.background = '';
 
-      $(opcoes[_index]).prev().css("background", "");
+      $(opcoes[_index]).prev().css('background', '');
 
       // adicionando evento de clique
 
-      $(opcoes[_index]).parent().on("click", function () {
+      $(opcoes[_index]).parent().on('click', function () {
 
         if (_index === _listaPerguntas.resposta) {
 
@@ -124,7 +137,7 @@ function carregaPerguntas() {
 
           opcoes[_index].style.background = '#00ff00';
 
-          $(opcoes[_index]).prev().css("background", "#00ff00");
+          $(opcoes[_index]).prev().css('background', '#00ff00');
 
           audioAcertou.play();
 
@@ -138,7 +151,7 @@ function carregaPerguntas() {
 
           opcoes[_index].style.background = '#ff0000';
 
-          $(opcoes[_index]).prev().css("background", "#ff0000");
+          $(opcoes[_index]).prev().css('background', '#ff0000');
 
           audioErrou.play();
 
@@ -150,7 +163,7 @@ function carregaPerguntas() {
 
           //     opcoes[key].style.background = '#00ff00';
 
-          //     $(opcoes[key]).prev().css("background", "#00ff00");
+          //     $(opcoes[key]).prev().css('background', '#00ff00');
           //   }
           // }
 
@@ -160,30 +173,28 @@ function carregaPerguntas() {
 
           opcao.style.background = '#00ff00';
 
-          $(opcao).prev().css("background", "#00ff00");
+          $(opcao).prev().css('background', '#00ff00');
         }
 
         // independe se acertou ou errou
 
         for (let opcao of opcoes) {
 
-          $(opcao).parent().off("click");
+          $(opcao).parent().off('click');
 
         }
 
-        audioFundo.pause();
+        stop();
 
-        audioFundo.currentTime = 0;
-
-        setTimeout(play, 3000);
+        next();
 
       })
 
     }
 
-    temp.textContent = "01:00";
+    temp.textContent = '01:00';
 
-    temp.style.color = ""
+    temp.style.color = ''
 
     setTimeout(function () {
 
@@ -212,15 +223,21 @@ function carregaPerguntas() {
 
         audio.play();
 
-        audioFundo.pause();
+        stop();
 
-        audioFundo.currentTime = 0;
-      })
+        // se for antes da ultima questão carregue a próxima
+        if (index < listaPerguntas.length - 1) {
 
-    }, 1000)
+          next();
 
+        }
+
+      });
+
+    }, 1000);
 
     index++;
+
   }
 }
 
