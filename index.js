@@ -26,6 +26,14 @@ function next() {
 
 function stop() {
 
+  const opcoes = document.querySelectorAll('.opcoes');
+
+  for (let opcao of opcoes) {
+
+    opcao.parentNode.onclick = null;
+
+  }
+
   audioFundo.pause();
 
   audioFundo.currentTime = 0;
@@ -113,7 +121,7 @@ function carregaPerguntas() {
 
     perguntas.textContent = _listaPerguntas.pergunta;
 
-    let opcoes = document.querySelectorAll('.opcoes');
+    const opcoes = document.querySelectorAll('.opcoes');
 
     // mudança: de for in para for padrão
     // motivo: key era uma string e a resposta é um número
@@ -129,7 +137,7 @@ function carregaPerguntas() {
 
       // adicionando evento de clique
 
-      $(opcoes[_index]).parent().on('click', function () {
+      opcoes[_index].parentNode.onclick = function () {
 
         if (_index === _listaPerguntas.resposta) {
 
@@ -178,17 +186,11 @@ function carregaPerguntas() {
 
         // independe se acertou ou errou
 
-        for (let opcao of opcoes) {
-
-          $(opcao).parent().off('click');
-
-        }
-
         stop();
 
         next();
 
-      })
+      }
 
     }
 
@@ -198,7 +200,7 @@ function carregaPerguntas() {
 
     setTimeout(function () {
 
-      timer(1, 0, function (time) {
+      timer(0, 15, function (time) {
 
         if (time.toSeconds() <= 10) {
 
