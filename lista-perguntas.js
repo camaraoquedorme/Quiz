@@ -3,14 +3,13 @@ const listaPerguntas = [
     pergunta: "Normalmente, quantos litros de sangue uma pessoa tem? Em média, quantos são retirados numa doação de sangue?",
 
     alternativas: [
-      "Tem entre 2 a 4 litros. São retirados 450 mililitros",
       "Tem entre 4 a 6 litros. São retirados 450 mililitros",
       "Tem 10 litros. São retirados 2 litros",
       "Tem 7 litros. São retirados 1,5 litros",
       "Tem 0,5 litros. São retirados 0,5 litros"
     ],
 
-    resposta: 1
+    resposta: 0
   },
   {
     pergunta: "De quem é a famosa frase “Penso, logo existo”?",
@@ -19,8 +18,7 @@ const listaPerguntas = [
       "Platão",
       "Galileu Galilei",
       "Descartes",
-      "Sócrates",
-      "Francis Bacon"
+      "Sócrates"
     ],
 
     resposta: 2
@@ -29,14 +27,13 @@ const listaPerguntas = [
     pergunta: "De onde é a invenção do chuveiro elétrico?",
 
     alternativas: [
-      "França",
       "Inglaterra",
       "Brasil",
       "Austrália",
       "Itália"
     ],
 
-    resposta: 2
+    resposta: 1
   },
   {
     pergunta: "Quais o menor e o maior país do mundo?",
@@ -45,8 +42,7 @@ const listaPerguntas = [
       "Vaticano e Rússia",
       "Nauru e China",
       "Mônaco e Canadá",
-      "Malta e Estados Unidos",
-      "São Marino e Índia"
+      "Malta e Estados Unidos"
     ],
 
     resposta: 0
@@ -57,12 +53,11 @@ const listaPerguntas = [
     alternativas: [
       "Jânio Quadros",
       "Jacinto Anjos",
-      "Getúlio Vargas",
       "João Figueiredo",
       "João Goulart"
     ],
 
-    resposta: 4
+    resposta: 3
   },
   {
     pergunta: "Qual o grupo em que todas as palavras foram escritas corretamente?",
@@ -70,7 +65,6 @@ const listaPerguntas = [
     alternativas: [
       "Asterístico, beneficiente, meteorologia, entertido",
       "Asterisco, beneficente, meteorologia, entretido",
-      "Asterisco, beneficente, metereologia, entretido",
       "Asterístico, beneficiente, metereologia, entretido",
       "Asterisco, beneficiente, metereologia, entretido"
     ],
@@ -81,40 +75,37 @@ const listaPerguntas = [
     pergunta: "Qual o livro mais vendido no mundo a seguir à Bíblia?",
 
     alternativas: [
-      "O Senhor dos Anéis",
       "Dom Quixote",
       "O Pequeno Príncipe",
       "Ela, a Feiticeira",
       "Um Conto de Duas Cidades"
     ],
 
-    resposta: 1
+    resposta: 0
   },
   {
     pergunta: "Quantas casas decimais tem o número pi?",
 
     alternativas: [
       "Duas",
-      "Centenas",
       "Infinitas",
       "Vinte",
       "Milhares"
     ],
 
-    resposta: 2
+    resposta: 1
   },
   {
     pergunta: "Atualmente, quantos elementos químicos a tabela periódica possui?",
 
     alternativas: [
-      "113",
       "109",
       "108",
       "118",
       "92"
     ],
 
-    resposta: 3
+    resposta: 2
   },
   {
     pergunta: "Quais os países que têm a maior e a menor expectativa de vida do mundo?",
@@ -122,7 +113,6 @@ const listaPerguntas = [
     alternativas: [
       "Japão e Serra Leoa",
       "Austrália e Afeganistão",
-      "Itália e Chade",
       "Brasil e Congo",
       "Estados Unidos e Angola"
     ],
@@ -136,8 +126,7 @@ const listaPerguntas = [
       "Legenda",
       "Conto",
       "História",
-      "Lenda",
-      "Legendário"
+      "Lenda"
     ],
 
     resposta: 3
@@ -148,12 +137,11 @@ const listaPerguntas = [
     alternativas: [
       "8",
       "10",
-      "9",
       "5",
       "7"
     ],
 
-    resposta: 4
+    resposta: 3
   },
   {
     pergunta: "Quais os principais autores do Barroco no Brasil?",
@@ -162,8 +150,7 @@ const listaPerguntas = [
       "Gregório de Matos, Bento Teixeira e Manuel Botelho de Oliveira",
       "Miguel de Cervantes, Gregório de Matos e Danthe Alighieri",
       "Padre Antônio Vieira, Padre Manuel de Melo e Gregório de Matos",
-      "Castro Alves, Bento Teixeira e Manuel Botelho de Oliveira",
-      "Álvares de Azevedo, Gregório de Matos e Bento Teixeira"
+      "Castro Alves, Bento Teixeira e Manuel Botelho de Oliveira"
     ],
 
     resposta: 0
@@ -175,20 +162,18 @@ const listaPerguntas = [
       "Independência do Brasil e Dia da Bandeira",
       "Proclamação da República e Dia Nacional da Consciência Negra",
       "Dia do Médico e Dia de São Lucas",
-      "Dia de Finados e Dia Nacional do Livro",
       "Black Friday e Dia da Árvore"
     ],
 
     resposta: 1
   },
   {
-    pergunta: 'Quem pintou "Guernica"?',
+    pergunta: "Quem pintou \"Guernica\"?",
 
     alternativas: [
       "Paul Cézanne",
       "Pablo Picasso",
       "Diego Rivera",
-      "Tarsila do Amaral",
       "Salvador Dalí"
     ],
 
@@ -201,8 +186,7 @@ const listaPerguntas = [
       "12 minutos",
       "1 dia",
       "12 horas",
-      "8 minutos",
-      "segundos"
+      "8 minutos"
     ],
 
     resposta: 3
@@ -214,8 +198,7 @@ const listaPerguntas = [
       "Fabiano coseu seu paletó antes de sair",
       "Fabiano fechou o saco antes de sair",
       "Fabiano pegou seu paletó antes de sair",
-      "Fabiano cortou o saco antes de cair",
-      "Fabiano rasgou seu paletó antes de cair"
+      "Fabiano cortou o saco antes de cair"
     ],
 
     resposta: 2
@@ -225,13 +208,12 @@ const listaPerguntas = [
 
     alternativas: [
       "Cubana",
-      "Peruana",
       "Panamenha",
       "Boliviana",
       "Argentina"
     ],
 
-    resposta: 4
+    resposta: 3
   },
   {
     pergunta: "Quais são os três predadores do reino animal reconhecidos pela habilidade de caçar em grupo, se camuflar para surpreender as presas e possuir sentidos apurados, respectivamente:",
@@ -240,8 +222,7 @@ const listaPerguntas = [
       "Tubarão branco, crocodilo e sucuri",
       "Tigre, gavião e orca",
       "Hiena, urso branco e lobo cinzento",
-      "Orca, onça e tarântula",
-      "Leão, tubarão branco e urso cinzento"
+      "Orca, onça e tarântula"
     ],
 
     resposta: 2
@@ -251,13 +232,12 @@ const listaPerguntas = [
 
     alternativas: [
       "2,4 para ambos",
-      "2,5 m e 2,0 m",
       "1,8 m e 1,5 m",
       "2,45 m e 2,15 m",
       "2,43 m e 2,24 m"
     ],
 
-    resposta: 4
+    resposta: 3
   },
   {
     pergunta: "Em que ordem surgiram os modelos atômicos?",
@@ -266,18 +246,16 @@ const listaPerguntas = [
       "Thomson, Dalton, Rutherford, Rutherford-Bohr",
       "Rutherford-Bohr, Rutherford, Thomson, Dalton",
       "Dalton, Rutherford-Bohr, Thomson, Rutherford",
-      "Dalton, Thomson, Rutherford-Bohr, Rutherford",
       "Dalton, Thomson, Rutherford, Rutherford-Bohr"
     ],
 
-    resposta: 4
+    resposta: 3
   },
   {
     pergunta: "Qual personagem folclórico costuma ser agradado pelos caçadores com a oferta de fumo?",
 
     alternativas: [
       "Caipora",
-      "Saci",
       "Lobisomem",
       "Boitatá",
       "Negrinho do Pastoreio"
@@ -292,33 +270,28 @@ const listaPerguntas = [
       "Neolítico",
       "Paleolítico",
       "Idade dos Metais",
-      "Período da Pedra Polida",
       "Idade Média"
     ],
 
     resposta: 1
   },
   {
-
-
     pergunta: "Qual das alternativas abaixo apenas contêm classes de palavras?",
 
     alternativas: [
-      "Vogais, semivogais e consoantes",
       "Artigo, verbo transitivo e verbo intransitivo",
       "Fonologia, Morfologia e Sintaxe",
       "Hiatos, ditongos e tritongos",
       "Substantivo, verbo e preposição"
     ],
 
-    resposta: 4
+    resposta: 3
   },
   {
     pergunta: "Qual a montanha mais alta do Brasil?",
 
     alternativas: [
       "Pico da Neblina",
-      "Pico Paraná",
       "Monte Roraima",
       "Pico Maior de Friburgo",
       "Pico da Bandeira"
@@ -332,38 +305,35 @@ const listaPerguntas = [
     alternativas: [
       "300 000 000 metros por segundo (m/s)",
       "150 000 000 metros por segundo (m/s)",
-      "199 792 458 metros por segundo (m/s)",
       "299 792 458 metros por segundo (m/s)",
       "30 000 000 metros por segundo (m/s)"
     ],
 
-    resposta: 3
+    resposta: 2
   },
   {
     pergunta: "Em qual local da Ásia o português é língua oficial?",
 
     alternativas: [
       "Índia",
-      "Filipinas",
       "Moçambique",
       "Macau",
       "Portugal"
     ],
 
-    resposta: 3
+    resposta: 2
   },
   {
-    pergunta: '"It is six twenty" ou "twenty past six". Que horas são em inglês?',
+    pergunta: "\"It is six twenty\" ou \"twenty past six\". Que horas são em inglês?",
 
     alternativas: [
-      "12:06",
       "6:20",
       "2:20",
       "6:02",
       "12:20"
     ],
 
-    resposta: 1
+    resposta: 0
   },
   {
     pergunta: "Quem é o autor de “O Príncipe”?",
@@ -372,7 +342,6 @@ const listaPerguntas = [
       "Maquiavel",
       "Antoine de Saint-Exupéry",
       "Montesquieu",
-      "Thomas Hobbes",
       "Rousseau"
     ],
 
@@ -384,9 +353,7 @@ const listaPerguntas = [
     alternativas: [
       "Eu caibo",
       "Ele cabe",
-      "Que eu caiba",
       "Eu cabo",
-
       "Nenhuma das alternativas"
     ],
 
@@ -397,7 +364,6 @@ const listaPerguntas = [
 
     alternativas: [
       "Estátua da Liberdade, Golden Gate Bridge e Empire State Building",
-      "Estátua da Liberdade, Big Ben e The High Line",
       "Angkor Wat, Taj Mahal e Skywalk no Grand Canyon",
       "Lincoln Memorial, Sidney Opera House e Burj Khalifa",
       "30 St Mary Axe, The High Line e Residencial 148 Spruce Street"
@@ -410,20 +376,18 @@ const listaPerguntas = [
 
     alternativas: [
       "Aids, tricomoníase e ebola",
-      "Chikungunya, aids e herpes genital",
       "Gonorreia, clamídia e sífilis",
       "Botulismo, cistite e gonorreia",
       "Hepatite B, febre tifoide e hanseníase"
     ],
 
-    resposta: 2
+    resposta: 1
   },
   {
     pergunta: "Qual destes países é transcontinental?",
 
     alternativas: [
       "Rússia",
-      "Filipinas",
       "Istambul",
       "Groenlândia",
       "Tanzânia"
@@ -435,39 +399,34 @@ const listaPerguntas = [
     pergunta: "Em qual das orações abaixo a palavra foi empregada incorretamente?",
 
     alternativas: [
-      "Mais uma vez, portou-se mal.",
       "É um homem mal.",
       "Esse é o mal de todos.",
       "Mal falou nele, o fulano apareceu.",
       "É um mau vendedor."
     ],
 
-    resposta: 1
+    resposta: 0
   },
   {
     pergunta: "Qual foi o recurso utilizado inicialmente pelo homem para explicar a origem das coisas?",
 
     alternativas: [
-      "A Filosofia",
       "A Biologia",
       "A Matemática",
       "A Astronomia",
       "A Mitologia"
     ],
 
-    resposta: 4
+    resposta: 3
   },
   {
-
-
     pergunta: "Qual das alternativas menciona apenas símbolos nacionais?",
 
     alternativas: [
       "Bandeira insígnia da presidência, bandeira nacional, brasão, hinos e selo",
       "Bandeira nacional, armas nacionais, hino nacional e selo nacional",
       "Bandeira nacional, brasão, hino nacional e hino da independência",
-      "Bandeira nacional, cores nacionais, hino nacional e hino da independência",
-      "Bandeira insígnia da presidência, brasão flora e fauna e hinos"
+      "Bandeira nacional, cores nacionais, hino nacional e hino da independência"
     ],
 
     resposta: 1
@@ -479,8 +438,7 @@ const listaPerguntas = [
       "Terra, Vênus, Saturno, Urano, Júpiter, Marte, Netuno, Mercúrio",
       "Júpiter, Marte, Mercúrio, Netuno, Plutão, Saturno, Terra, Urano, Vênus",
       "Vênus, Saturno, Urano, Júpiter, Marte, Netuno, Mercúrio",
-      "Júpiter, Marte, Mercúrio, Netuno, Plutão, Saturno, Sol, Terra, Urano, Vênus",
-      "Terra, Vênus, Saturno, Júpiter, Marte, Netuno, Mercúrio"
+      "Júpiter, Marte, Mercúrio, Netuno, Plutão, Saturno, Sol, Terra, Urano, Vênus"
     ],
 
     resposta: 0
@@ -492,11 +450,10 @@ const listaPerguntas = [
       "Alexandrino Francisco Lisboa",
       "Manuel Francisco Lisboa",
       "Alex Francisco Lisboa",
-      "Francisco Antônio Lisboa",
       "Antônio Francisco Lisboa"
     ],
 
-    resposta: 4
+    resposta: 3
   },
   {
     pergunta: "Júpiter e Plutão são os correlatos romanos de quais deuses gregos?",
@@ -505,8 +462,7 @@ const listaPerguntas = [
       "Ares e Hermes",
       "Cronos e Apolo",
       "Zeus e Hades",
-      "Dionísio e Deméter",
-      "Zeus e Ares"
+      "Dionísio e Deméter"
     ],
 
     resposta: 2
@@ -518,7 +474,6 @@ const listaPerguntas = [
       "Baleia Azul",
       "Dinossauro",
       "Elefante africano",
-      "Tubarão Branco",
       "Girafa"
     ],
 
@@ -529,7 +484,6 @@ const listaPerguntas = [
 
     alternativas: [
       "Igualdade das raças",
-      "Justiça para os menos favorecidos",
       "Intolerância religiosa",
       "Prêmio Nobel da Paz",
       "Luta contra o Apartheid"
@@ -544,7 +498,6 @@ const listaPerguntas = [
       "Dilma Rousseff",
       "Angela Merkel",
       "Margaret Thatcher",
-      "Hillary Clinton",
       "Christine Lagarde"
     ],
 
@@ -557,11 +510,10 @@ const listaPerguntas = [
       "Acordo ortográfico entre países cuja língua oficial é o francês e Acordo de cooperação financeira internacional entre as três maiores potências mundiais",
       "Acordo entre países europeus acerca da imigração e Acordo econômico entre Inglaterra, Rússia a França",
       "Acordo entre vários países acerca das consequências do aquecimento global e Acordo de cooperação financeira internacional entre as três maiores potências mundiais",
-      "Acordo de cooperação financeira internacional entre as três maiores potências mundiais e Acordo entre vários países acerca das consequências do aquecimento global",
       "Acordo entre vários países acerca das consequências do aquecimento global e Acordo entre Alemanha, império Austro-Húngaro e Itália acerca de apoio em caso de guerra"
     ],
 
-    resposta: 4
+    resposta: 3
   },
   {
     pergunta: "Quais os nomes dos três Reis Magos?",
@@ -569,7 +521,6 @@ const listaPerguntas = [
     alternativas: [
       "Gaspar, Nicolau e Natanael",
       "Belchior, Gaspar e Baltazar",
-      "Belchior, Gaspar e Nataniel",
       "Gabriel, Benjamim e Melchior",
       "Melchior, Noé e Galileu"
     ],
@@ -582,7 +533,6 @@ const listaPerguntas = [
     alternativas: [
       "Alberto Caeiro, Ricardo Reis e Álvaro de Campos",
       "Ariano Suassuna, Raul Bopp e Quincas Borba",
-      "Bento Teixeira, Ricardo Reis e Haroldo de Campos",
       "Alberto Caeiro, Ricardo Leite e Augusto de Campos",
       "Bento Teixeira, Ricardo Reis e Augusto de Campos"
     ],
@@ -594,13 +544,12 @@ const listaPerguntas = [
 
     alternativas: [
       "Judaísmo",
-      "Zoroastrismo",
       "Islamismo",
       "Cristianismo",
       "Hinduísmo"
     ],
 
-    resposta: 3
+    resposta: 2
   },
   {
     pergunta: "Qual desses filmes foi baseado na obra de Shakespeare?",
@@ -608,7 +557,6 @@ const listaPerguntas = [
     alternativas: [
       "Muito Barulho por Nada (2012)",
       "Capitães de Areia (2011)",
-      "A Dama das Camélias (1936)",
       "A Revolução dos Bichos (1954)",
       "Excalibur (1981)"
     ],
@@ -622,11 +570,10 @@ const listaPerguntas = [
       "Yuri Gagarin, em 1961",
       "Buzz Aldrin, em 1969",
       "Charles Conrad, em 1969",
-      "Charles Duke, em 1971",
       "Neil Armstrong, em 1969."
     ],
 
-    resposta: 4
+    resposta: 3
   },
   {
     pergunta: "Qual o nome do cientista que descobriu o processo de pasteurização e a vacina contra a raiva?",
@@ -635,7 +582,6 @@ const listaPerguntas = [
       "Marie Curie",
       "Blaise Pascal",
       "Louis Pasteur",
-      "Antoine Lavoisier",
       "Charles Darwin"
     ],
 
@@ -648,7 +594,6 @@ const listaPerguntas = [
       "Tipo A",
       "Tipo B",
       "Tipo O",
-      "Tipo AB",
       "Tipo ABO"
     ],
 
@@ -659,13 +604,12 @@ const listaPerguntas = [
 
     alternativas: [
       "Os V",
-      "Os X",
       "Os Y",
       "Os W",
       "Os Z"
     ],
 
-    resposta: 2
+    resposta: 1
   },
   {
     pergunta: "Em que estado australiano fica situada a cidade de Sydney?",
@@ -674,8 +618,7 @@ const listaPerguntas = [
       "Nova Gales do Sul",
       "Victoria",
       "Tasmânia",
-      "Queensland",
-      "Norfolk"
+      "Queensland"
     ],
 
     resposta: 0
@@ -684,14 +627,13 @@ const listaPerguntas = [
     pergunta: "Que organização juvenil foi fundado por Baden-Powell?",
 
     alternativas: [
-      "A juventude socialista",
       "O escotismo",
       "O clube dos aventureiros",
       "A associação juvenil",
       "A Organização mundial da juventude"
     ],
 
-    resposta: 1
+    resposta: 0
   },
   {
     pergunta: "Quem amamentou os gêmeos Rômulo e Remo?",
@@ -700,24 +642,22 @@ const listaPerguntas = [
       "uma cabra",
       "uma vaca",
       "uma ovelha",
-      "uma gata",
       "uma loba"
     ],
 
-    resposta: 4
+    resposta: 3
   },
   {
     pergunta: "No exterior de que famoso edifício francês foi construída uma enorme pirâmide de vidro em 1989?",
 
     alternativas: [
       "Torre Eiffel",
-      "Petit Palais",
       "Grand Palais",
       "Museu do Louvre",
       "Arco do Triunfo"
     ],
 
-    resposta: 3
+    resposta: 2
   },
   {
     pergunta: "Como se chamam os vasos que transportam sangue do coração para a periferia do corpo?",
@@ -726,8 +666,7 @@ const listaPerguntas = [
       "veias",
       "átrios",
       "ventrículos",
-      "artérias",
-      "aurículos"
+      "artérias"
     ],
 
     resposta: 3
@@ -739,8 +678,7 @@ const listaPerguntas = [
       "com o Brasil e com a Colômbia",
       "com a Colômbia e com a Venezuela",
       "com a Colômbia e com o Peru",
-      "com o Peru e com o Equador",
-      "com o Equador e o Brasil"
+      "com o Peru e com o Equador"
     ],
 
     resposta: 2
@@ -749,14 +687,13 @@ const listaPerguntas = [
     pergunta: "Que animal gruguleja?",
 
     alternativas: [
-      "o pavão",
       "a garça",
       "o papagaio",
       "a cacatua",
       "o peru"
     ],
 
-    resposta: 4
+    resposta: 3
   },
   {
     pergunta: "Qual é o maior arquipélago da Terra?",
@@ -765,7 +702,6 @@ const listaPerguntas = [
       "a Filipinas",
       "a Indonésia",
       "as Bahamas",
-      "a Finlândia",
       "as Maldivas"
     ],
 
@@ -777,12 +713,11 @@ const listaPerguntas = [
     alternativas: [
       "o oxigênio",
       "o nitrogênio",
-      "o nitrato de sódio",
       "o dióxido de ferro",
       "o dióxido de carbono"
     ],
 
-    resposta: 4
+    resposta: 3
   },
   {
     pergunta: "Em que oceano fica Madagascar?",
@@ -790,7 +725,6 @@ const listaPerguntas = [
     alternativas: [
       "Oceano Índico",
       "Oceano Antártico",
-      "Oceano Atlântico",
       "Oceano Pacífico",
       "Oceano Ártico"
     ],
@@ -804,8 +738,7 @@ const listaPerguntas = [
       "Pablo Picasso",
       "Salvador Dalí",
       "Marcel Duchamp",
-      "Van Gogh",
-      "Leonardo da Vinci"
+      "Van Gogh"
     ],
 
     resposta: 2
@@ -817,8 +750,7 @@ const listaPerguntas = [
       "Cobre",
       "Prata",
       "Mercúrio",
-      "Ouro",
-      "Manganês"
+      "Ouro"
     ],
 
     resposta: 3
@@ -828,13 +760,12 @@ const listaPerguntas = [
 
     alternativas: [
       "No século X",
-      "No século XI",
       "No século XII",
       "No século XIII",
       "No século XIV"
     ],
 
-    resposta: 4
+    resposta: 3
   },
   {
     pergunta: "Quem viveu, segundo a bíblia, 969 anos?",
@@ -843,8 +774,7 @@ const listaPerguntas = [
       "Jesus Cristo",
       "Noé",
       "Matusalém",
-      "Benjamim",
-      "Abel"
+      "Benjamim"
     ],
 
     resposta: 2
@@ -853,14 +783,13 @@ const listaPerguntas = [
     pergunta: "Em que cidade ocorreu a Eco-92, a Conferência das Nações Unidas sobre ambiente e desenvolvimento?",
 
     alternativas: [
-      "Buenos Aires",
       "Rio de Janeiro",
       "Montevidéu",
       "Assunção",
       "Caracas"
     ],
 
-    resposta: 1
+    resposta: 0
   },
   {
     pergunta: "Quem pintou o teto da capela sistina?",
@@ -869,8 +798,7 @@ const listaPerguntas = [
       "Michelangelo",
       "Leonardo da Vinci",
       "Rafael",
-      "Sandro Botticelli",
-      "Donatello"
+      "Sandro Botticelli"
     ],
 
     resposta: 0
@@ -882,8 +810,7 @@ const listaPerguntas = [
       "45",
       "60",
       "90",
-      "180",
-      "360"
+      "180"
     ],
 
     resposta: 2
@@ -895,8 +822,7 @@ const listaPerguntas = [
       "Homero",
       "Eurípedes",
       "Plutarco",
-      "Ésquilo",
-      "Sófocles"
+      "Ésquilo"
     ],
 
     resposta: 3
@@ -907,11 +833,12 @@ const listaPerguntas = [
     alternativas: [
       "The Police",
       "The Doors",
-      "Pink Floyd",
       "Nirvana",
       "AC/DC"
     ],
 
     resposta: 1
   }
-];
+]
+
+export { listaPerguntas };

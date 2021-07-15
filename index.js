@@ -1,83 +1,89 @@
 import { listaPerguntas } from "./lista-perguntas.js";
 
-//efeitos sonoros
+//Audio de Fundo
 
 const audioFundo = new Audio('./efeitos_sonoros/FundoMusical_quiz.mp3');
 const audioErrou = new Audio('./efeitos_sonoros/errou_pergunta3.mp3');
-const audioAcertou = new Audio('./efeitos_sonoros/acertou_pergunta.mp3');
+const audioAcertou = new Audio('./efeitos_sonoros/acertou_pergunta.mp3')
+
+//efeitos sonoros
+const temp = document.getElementById('tempo');
+
 const audio = new Audio("./efeitos_sonoros/tempo-esgotado.mp3");
 const audioTempoAcabando = new Audio("./efeitos_sonoros/tempoAcabando.mp3");
 
+function play() {
 
-const temp = document.getElementById('tempo');
+  carregaPerguntas();
 
-function play(){
-    carregaPerguntas();
+  audioFundo.play();
 
-    audioFundo.play();
 }
 
 //jQuery
 
-$(document).ready(function () {
-    $('#comecar').click(function () {
-        $('#titulo').hide();
-        $('.tela_quiz').show(600, play);
-    })
+$(function () {
+
+  $('#comecar').on("click", function () {
+
+    $('#titulo').hide();
+
+    $('.tela_quiz').show(600, play);
+  })
 })
 
 class Time {
-    constructor(minutes, seconds) {
-        this.minutes = minutes;
-        this.seconds = seconds;
+  constructor(minutes, seconds) {
+    this.minutes = minutes;
+    this.seconds = seconds;
+  }
+
+  toSeconds() {
+    return (this.minutes * 60) + this.seconds;
+  }
+
+  toString() {
+    function slice(value) {
+      return `0${value}`.slice(-2)
     }
+    return `${slice(this.minutes)}:${slice((this.seconds))}`;
+  }
 
-    toSeconds() {
-        return (this.minutes * 60) + this.seconds;
-    }
+  static fromSeconds(seconds) {
 
-    toString() {
-        function slice(value) {
-            return `00${value}`.slice(-2)
-        }
-        return `${slice(this.minutes)}:${slice((this.seconds))}`;
-    }
+    const _seconds = seconds % 60;
 
-    static fromSeconds(seconds) {
+    const _minutes = (seconds - _seconds) / 60;
 
-        const _seconds = seconds % 60;
-
-        const _minutes = (seconds - _seconds) / 60;
-
-        return new Time(_minutes, _seconds);
-    }
+    return new Time(_minutes, _seconds);
+  }
 }
 
 function getSeconds() {
-    return Math.floor(Date.now() / 1000);
+  return Math.floor(Date.now() / 1000);
 }
 
 function timer(minutes, seconds, callback, onfinish) {
-    const time = new Time(minutes, seconds);
-    const end = getSeconds() + time.toSeconds();
+  const time = new Time(minutes, seconds);
+  const end = getSeconds() + time.toSeconds();
 
-    function loop() {
-        const _now = end - getSeconds();
-        const _time = Time.fromSeconds(_now);
+  function loop() {
+    const _now = end - getSeconds();
+    const _time = Time.fromSeconds(_now);
 
-        if (_time.toSeconds() > 0) {
+    if (_time.toSeconds() > 0) {
 
-            callback(_time);
-            setTimeout(loop, 1000)
+      callback(_time);
+      setTimeout(loop, 1000)
 
-        }
-
-        else {
-            callback(new Time(0, 0));
-            onfinish();
-        }
     }
-    loop();
+
+    else {
+      callback(new Time(0, 0));
+      onfinish();
+    }
+  }
+  loop();
 }
 
 const perguntas = document.getElementById('perguntas');
@@ -86,113 +92,137 @@ let index = 0;
 
 function carregaPerguntas() {
 
-    if (index < listaPerguntas.length) {
-        console.log(listaPerguntas[index].pergunta);
+  if (index < listaPerguntas.length) {
 
-        perguntas.textContent = listaPerguntas[index].pergunta;
+    // prevenção caso o index mude o código não seja afetado
+    const _listaPerguntas = listaPerguntas[index];
 
-        let opcoes = document.querySelectorAll('.opcoes');
+    console.log(_listaPerguntas.pergunta);
 
-        for (let key in listaPerguntas[index].alternativas) {
+    perguntas.textContent = _listaPerguntas.pergunta;
 
-            opcoes[key].textContent = listaPerguntas[index].alternativas[key];
+    let opcoes = document.querySelectorAll('.opcoes');
 
-            opcoes[key].parentNode.onclick = function () {
+    // mudança: de for in para for padrão
+    // motivo: key era uma string e a resposta é um número
+    for (let _index = 0; _index < _listaPerguntas.alternativas.length; _index++) {
 
-                if (listaPerguntas[index].alternativas[key] === listaPerguntas[index].resposta) {
+      opcoes[_index].textContent = _listaPerguntas.alternativas[_index];
 
-                    console.log('certo');
+      // removendo estilos
 
-                    opcoes[key].style.background = '#00ff00'
+      opcoes[_index].style.background = "";
 
-                    $(opcoes[key]).prev().css("background", "#00ff00");
+      $(opcoes[_index]).prev().css("background", "");
 
-                    audioAcertou.play();
+      // adicionando evento de clique
 
-                    audioFundo.pause();
+      $(opcoes[_index]).parent().on("click", function () {
 
-                    audioFundo.currentTime = 0;
-                    
-                    somaPontos();
+        if (_index === _listaPerguntas.resposta) {
 
-                    for(let opcao of opcoes){
+          console.log('acertou');
 
-                        opcao.parentNode.onclick = null;
-                    }
+          opcoes[_index].style.background = '#00ff00';
 
-                } else {
+          $(opcoes[_index]).prev().css("background", "#00ff00");
 
-                    console.log('errado')
+          audioAcertou.play();
 
-                    opcoes[key].style.background = '#ff0000';
+          somaPontos();
 
-                    $(opcoes[key]).prev().css("background", "#ff0000");
-
-                    audioErrou.play();
-
-                    audioFundo.pause();
-
-                    audioFundo.currentTime = 0;
-
-                    for(let opcao of opcoes){
-                        
-                        opcao.parentNode.onclick = null;
-
-                    }
-
-                    for (let key in listaPerguntas[index].alternativas){
-
-                        if(listaPerguntas[index].alternativas[key] === listaPerguntas[index].resposta){
-                            
-                            opcoes[key].style.background = '#00ff00';
-                            $(opcoes[key]).prev().css("background", "#00ff00");
-                        }
-                    }
-                }
-            }
         }
 
-        temp.textContent = "01:00";
+        else {
 
-        temp.style.color = 'unset'
+          console.log('errou');
 
-        setTimeout(function () {
+          opcoes[_index].style.background = '#ff0000';
 
-            timer(1, 0, function (time) {
+          $(opcoes[_index]).prev().css("background", "#ff0000");
 
-                if (time.toSeconds() <= 10) {
+          audioErrou.play();
 
-                    audioTempoAcabando.play();
+          // deprecated
 
-                    temp.style.transform = 'scale(1.2)';
+          // for (let key in _listaPerguntas.alternativas) {
 
-                    setTimeout(function () {
+          //   if (_listaPerguntas.alternativas[key] === _listaPerguntas.resposta) {
 
-                        temp.style.transform = 'scale(1.0)';
+          //     opcoes[key].style.background = '#00ff00';
 
-                    }, 200);
+          //     $(opcoes[key]).prev().css("background", "#00ff00");
+          //   }
+          // }
 
-                    temp.style.color = 'red';
-                }
+          // new code
 
-                temp.textContent = time.toString();
+          const opcao = opcoes[_listaPerguntas.resposta];
 
-            }, function () {
+          opcao.style.background = '#00ff00';
 
-                console.log('acabou');
+          $(opcao).prev().css("background", "#00ff00");
+        }
 
-                audio.play();
+        // independe se acertou ou errou
 
-                audioFundo.pause();
+        for (let opcao of opcoes) {
 
-                audioFundo.currentTime = 0;
-            })
+          $(opcao).parent().off("click");
 
-        }, 1000)
+        }
 
+        audioFundo.pause();
 
-        index++;
+        audioFundo.currentTime = 0;
+
+        setTimeout(play, 3000);
+
+      })
+
     }
+
+    temp.textContent = "01:00";
+
+    temp.style.color = ""
+
+    setTimeout(function () {
+
+      timer(1, 0, function (time) {
+
+        if (time.toSeconds() <= 10) {
+
+          audioTempoAcabando.play();
+
+          temp.style.transform = 'scale(1.2)';
+
+          setTimeout(function () {
+
+            temp.style.transform = 'scale(1.0)';
+
+          }, 200);
+
+          temp.style.color = 'red';
+        }
+
+        temp.textContent = time.toString();
+
+      }, function () {
+
+        console.log('acabou');
+
+        audio.play();
+
+        audioFundo.pause();
+
+        audioFundo.currentTime = 0;
+      })
+
+    }, 1000)
+
+
+    index++;
+  }
 }
 
 let pontos = document.getElementById('pontos');
@@ -200,8 +230,9 @@ let pontos = document.getElementById('pontos');
 let point = 0;
 
 function somaPontos() {
-     point = point + 1 ;
-    
-    pontos.textContent = point;
-}
 
+  point = point + 1;
+
+  pontos.textContent = point;
+
+}

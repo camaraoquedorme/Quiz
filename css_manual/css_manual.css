@@ -1,63 +1,84 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap');
-
-body{
-    background-image: linear-gradient(45deg, blue, black);
-    background-repeat: no-repeat;
-}
-h3, h1{
-    font-family: 'Rubik', sans-serif;;
-    font-weight: bold;
-    color: white;
+body {
+  background-image: linear-gradient(45deg, blue, black);
+  background-repeat: no-repeat;
 }
 
-.botao{
-    width: 180px;
-    height: 35px;
-    margin-top: 10px;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-.pergunta{
-    background-color: rgb(30, 199, 255);
-}
-.tela_quiz{
-    display: none;
-}
-.alternativas{
-    cursor: pointer;
-}
-.alternativas:hover{
-    transform: scale(1.05);
-}
-.pontos h5{
-    color: white;
-}
-.tempo h5{
-    color: white;
+h3, h1 {
+  font-family: 'Rubik', sans-serif;
+  font-weight: bold;
+  color: white;
 }
 
-.tempo_form{
-    display: inline-block;
-    padding-left: 5px;
-}
-span{
-    color:white;
-    padding-left: 8px;
+.botao {
+  width: 180px;
+  height: 35px;
+  margin-top: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
-.footer{
-    position: absolute;
-    bottom: 0px;
-    background-color: rgb(21, 102, 252);
-    width: 100%;
-    text-align: center;
+.pergunta {
+  background-color: rgb(30, 199, 255);
 }
-.footer p{
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-}
-.footer p a{
-    color:white;
 
+.tela_quiz {
+  display: none;
+}
+
+.alternativas {
+  cursor: pointer;
+}
+
+.alternativas:hover {
+  transform: scale(1.05);
+}
+
+.pontos h5 {
+  color: white;
+}
+
+.tempo h5 {
+  color: white;
+}
+
+.tempo_form {
+  display: inline-block;
+  padding-left: 5px;
+}
+
+span {
+  color: white;
+  padding-left: 8px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0px;
+  background-color: rgb(21, 102, 252);
+  width: 100%;
+  text-align: center;
+}
+
+.footer p {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.footer p a {
+  color: white;
+}
+
+.opcoes {
+  background-color: white;
+}
+
+.footer p a {
+  color: white;
+}
+
+.alternativas div:first-child {
+  background-color: rgb(7, 185, 255);
+  font-weight: bold;
 }
