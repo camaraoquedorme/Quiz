@@ -160,6 +160,16 @@ function carregaPerguntas() {
                     for(let opcao of opcoes){
                         
                         opcao.parentNode.onclick = null;
+
+                    }
+
+                    for (let key in quiz[index].alternativas){
+
+                        if(quiz[index].alternativas[key] === quiz[index].resposta){
+                            
+                            opcoes[key].style.background = '#00ff00';
+                            $(opcoes[key]).prev().css("background", "#00ff00");
+                        }
                     }
                 }
             }
