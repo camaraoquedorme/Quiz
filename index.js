@@ -200,7 +200,7 @@ function carregaPerguntas() {
 
     setTimeout(function () {
 
-      timer(0, 15, function (time) {
+      timer(1, 0, function (time) {
 
         if (time.toSeconds() <= 10) {
 
