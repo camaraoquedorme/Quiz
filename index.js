@@ -1,16 +1,15 @@
 import { listaPerguntas } from "./lista-perguntas.js";
 
-//Audio de Fundo
+//efeitos sonoros
 
 const audioFundo = new Audio('./efeitos_sonoros/FundoMusical_quiz.mp3');
 const audioErrou = new Audio('./efeitos_sonoros/errou_pergunta3.mp3');
 const audioAcertou = new Audio('./efeitos_sonoros/acertou_pergunta.mp3')
-
-//efeitos sonoros
-const temp = document.getElementById('tempo');
-
 const audio = new Audio("./efeitos_sonoros/tempo-esgotado.mp3");
 const audioTempoAcabando = new Audio("./efeitos_sonoros/tempoAcabando.mp3");
+
+const temp = document.getElementById('tempo');
+
 
 function play() {
 
