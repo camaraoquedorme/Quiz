@@ -7,4 +7,4 @@ function shuffle(...array) {
     }
     return _array;
 }
-export default shuffle;
+export { shuffle };

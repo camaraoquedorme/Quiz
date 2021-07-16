@@ -1,6 +1,12 @@
 import { listaPerguntas } from './lista-perguntas.js';
 
+import { shuffle } from './shuffle.js';
+
 import { timer } from "./timer.js";
+
+const qntdPerguntas = 25;
+
+const _listaPerguntas = shuffle(listaPerguntas).slice(0, qntdPerguntas);
 
 //efeitos sonoros
 
@@ -62,7 +68,7 @@ let index = 0;
 
 function carregaPerguntas() {
 
-  if (index < listaPerguntas.length) {
+  if (index < _listaPerguntas.length) {
 
     temp.textContent = '01:00';
 
@@ -113,9 +119,9 @@ function carregaPerguntas() {
     })
 
     // prevenção caso o index mude o código não seja afetado
-    const questao = listaPerguntas[index];
+    const questao = _listaPerguntas[index];
 
-    perguntas.textContent = `${index + 1}/${listaPerguntas.length} - ${questao.pergunta}`;
+    perguntas.textContent = `${index + 1}/${_listaPerguntas.length} - ${questao.pergunta}`;
 
     const opcoes = document.querySelectorAll('.opcoes');
 
