@@ -108,14 +108,7 @@ function carregaPerguntas() {
 
       // independende se acabou ou foi interrompido
 
-      stop();
-
-      // se for antes da ultima questão carregue a próxima
-      if (index < listaPerguntas.length - 1) {
-
-        next();
-
-      }
+      next();
 
     })
 
@@ -175,6 +168,10 @@ function carregaPerguntas() {
 
         // independe se acertou ou errou
 
+        // remove os eventos assim que clicado
+        stop();
+
+        // para o loop
         _stopLoop();
 
       }
